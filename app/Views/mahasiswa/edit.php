@@ -1,15 +1,31 @@
-<form action="/update/<?=$id?>" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">NPM</label>
-    <input type="text" class="form-control" name="npm" id="npm" value = "<?=$npm?>">
+<?= $this -> extend('template')?>
+<?= $this-> section('content')?>
+<form action="/update/<?=$mahasiswa['id']?>" method="post">
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="npm">NPM</label>
+        <input type="text" name ="npm" class="form-control" id="npm" value="<?=$mahasiswa['npm']?>">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input type="text" name ="nama" class="form-control" id="nama" value="<?=$mahasiswa['nama']?>">
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Alamat</label>
+        <input type="text" name="alamat" class="form-control" id="alamat" value="<?=$mahasiswa['alamat']?>">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+          <!-- <input type="text" name = "alamat" class="form-control" id="alamat" > ganti text area-->
+        <textarea name = "deskripsi" class="form-control"  id="deskripsi"><?=$mahasiswa['deskripsi']?></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i>Submit</button>
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nama</label>
-    <input type="text" class="form-control" name="nama" id="nama" value = "<?=$nama?>">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Alamat</label>
-    <input type="text" class="form-control" id="alamat" name="alamat" value = "<?=$alamat?>">
-  </div>
-  <button type="submit" class="btn btn-primary">Simpan Data</button>
 </form>
+<?= $this -> endSection() ?>
